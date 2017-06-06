@@ -1,19 +1,19 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {Provider} from 'react-redux';
 import {Router, browserHistory} from 'react-router';
-import routes from './routes';
-import configureStore from './store/configureStore';
+import routes from 'Routes';
+import configureStore from 'store/configureStore';
+
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 const store = configureStore();
 
-class App extends Component {
-  render() {
-    return (
-      <Provider store={store}>
-        <Router routes={routes} history={browserHistory}/>
-      </Provider>
-    );
-  }
-}
+const App = () => (
+  <Provider store={store}>
+    <MuiThemeProvider>
+      <Router routes={routes} history={browserHistory}/>
+    </MuiThemeProvider>
+  </Provider>
+);
 
 export default App;
