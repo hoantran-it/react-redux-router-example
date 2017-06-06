@@ -5,6 +5,7 @@ import Home from 'pages/HomePage'
 import SignUp from 'pages/SignUpPage'
 import Login from 'pages/LoginPage'
 import CreateTopic from 'pages/CreateTopicPage'
+import Topic from 'pages/TopicPage'
 import Book from 'components/book/BookPage'
 
 export default (
@@ -13,6 +14,7 @@ export default (
     <Route path="/sign-up" component={SignUp}></Route>
     <Route path="/login" component={Login}></Route>
     <Route path="/create-topic" component={CreateTopic}></Route>
+    <Route path="/topic" component={Topic}></Route>
     <Route path="/login" component={Login}></Route>
     <Route path="/book" component={Book}></Route>
   </Route>
