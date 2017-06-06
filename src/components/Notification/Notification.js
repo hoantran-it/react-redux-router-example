@@ -1,4 +1,4 @@
-import React  from 'react';
+import React from 'react';
 import NotificationItem from 'components/NotificationItem';
 
 class Notification extends React.Component {

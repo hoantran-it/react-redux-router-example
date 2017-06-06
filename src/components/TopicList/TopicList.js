@@ -1,4 +1,4 @@
-import React  from 'react';
+import React from 'react';
 import TopicItem from 'components/TopicItem';
 
 class TopicList extends React.Component {

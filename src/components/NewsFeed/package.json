@@ -1,0 +1,6 @@
+{
+  "name": "NewsFeed",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./NewsFeed.js"
+}

@@ -1,4 +1,4 @@
-import React  from 'react';
+import React from 'react';
 import {Route, IndexRoute} from 'react-router';
 import Main from 'components/Main'
 import Home from 'pages/HomePage'
@@ -6,6 +6,8 @@ import SignUp from 'pages/SignUpPage'
 import Login from 'pages/LoginPage'
 import CreateTopic from 'pages/CreateTopicPage'
 import Topic from 'pages/TopicPage'
+import TopicDetail from 'pages/TopicDetailPage'
+import UserInfo from 'pages/UserDetailPage'
 import Book from 'components/book/BookPage'
 
 export default (
@@ -15,7 +17,8 @@ export default (
     <Route path="/login" component={Login}></Route>
     <Route path="/create-topic" component={CreateTopic}></Route>
     <Route path="/topic" component={Topic}></Route>
-    <Route path="/login" component={Login}></Route>
+    <Route path="/topic-detail" component={TopicDetail}></Route>
+    <Route path="/user-detail" component={UserInfo}></Route>
     <Route path="/book" component={Book}></Route>
   </Route>
 )
