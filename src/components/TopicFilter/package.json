@@ -1,0 +1,6 @@
+{
+  "name": "TopicFilter",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./TopicFilter.js"
+}

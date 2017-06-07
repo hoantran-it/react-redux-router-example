@@ -1,9 +1,12 @@
 import React from 'react';
+import KeywordItem from 'components/KeywordItem';
 
 class KeywordPanel extends React.Component {
   render() {
     return (
-      <div>Keyword Panel ne</div>
+      <div>
+        <KeywordItem/>
+      </div>
     )
   }
 }
