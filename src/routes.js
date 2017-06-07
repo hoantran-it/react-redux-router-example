@@ -1,14 +1,14 @@
-import React from 'react';
-import {Route, IndexRoute} from 'react-router';
-import Main from 'components/Main'
-import Home from 'pages/HomePage'
-import SignUp from 'pages/SignUpPage'
-import Login from 'pages/LoginPage'
-import CreateTopic from 'pages/CreateTopicPage'
-import Topic from 'pages/TopicPage'
-import TopicDetail from 'pages/TopicDetailPage'
-import UserInfo from 'pages/UserDetailPage'
-import Book from 'components/book/BookPage'
+import React from "react";
+import {Route, IndexRoute} from "react-router";
+import Main from "components/Main";
+import Home from "pages/HomePage";
+import SignUp from "pages/SignUpPage";
+import Login from "pages/LoginPage";
+import CreateTopic from "pages/CreateTopicPage";
+import Topic from "pages/TopicPage";
+import TopicDetail from "pages/TopicDetailPage";
+import UserInfo from "pages/UserDetailPage";
+import Book from "components/book/BookPage";
 
 export default (
   <Route path="/" component={Main}>

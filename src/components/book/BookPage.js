@@ -1,6 +1,6 @@
-import React from 'react';
-import { connect } from 'react-redux';
-import * as bookActions from 'actions/bookActions';
+import React from "react";
+import {connect} from "react-redux";
+import * as bookActions from "actions/bookActions";
 
 class Book extends React.Component{
   // eslint-disable-next-line

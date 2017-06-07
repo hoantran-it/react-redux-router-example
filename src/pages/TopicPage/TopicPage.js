@@ -1,7 +1,7 @@
 import React from "react";
-import TopicFilter from 'components/TopicFilter';
-import TopicList from 'components/TopicList';
-import CircularProgress from 'material-ui/CircularProgress';
+import CircularProgress from "material-ui/CircularProgress";
+import TopicFilter from "components/TopicFilter";
+import TopicList from "components/TopicList";
 
 class TopicPage extends React.Component {
   render() {

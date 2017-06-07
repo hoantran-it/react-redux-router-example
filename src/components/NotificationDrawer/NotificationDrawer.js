@@ -1,7 +1,7 @@
-import React from 'react';
-import Drawer from 'material-ui/Drawer';
-import MenuItem from 'material-ui/MenuItem';
-import RaisedButton from 'material-ui/RaisedButton';
+import React from "react";
+import Drawer from "material-ui/Drawer";
+import MenuItem from "material-ui/MenuItem";
+import RaisedButton from "material-ui/RaisedButton";
 
 class NotificationDrawer extends React.Component {
   constructor(props) {
@@ -10,7 +10,6 @@ class NotificationDrawer extends React.Component {
   }
 
   handleToggle = () => {
-    console.log("handleToggle");
     this.setState({open: !this.state.open});
   }
 

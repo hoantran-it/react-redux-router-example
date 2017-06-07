@@ -1,8 +1,8 @@
-import React from 'react';
-import {Link} from 'react-router';
+import React from "react";
+import {Link} from "react-router";
+import TopHeader from "components/TopHeader";
+import TopToolbar from "components/TopToolbar";
 
-import TopHeader from 'components/TopHeader';
-import TopToolbar from 'components/TopToolbar';
 
 const Main = (props) => {
   return (

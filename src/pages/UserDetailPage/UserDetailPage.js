@@ -1,5 +1,5 @@
 import React from "react";
-import UserDetail from 'components/UserDetail';
+import UserDetail from "components/UserDetail";
 
 class SignUpPage extends React.Component {
   render() {
