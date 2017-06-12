@@ -8,7 +8,6 @@ import CreateTopic from "pages/CreateTopicPage";
 import Topic from "pages/TopicPage";
 import TopicDetail from "pages/TopicDetailPage";
 import UserInfo from "pages/UserDetailPage";
-import Book from "components/book/BookPage";
 
 export default (
   <Route path="/" component={Main}>
@@ -19,6 +18,5 @@ export default (
     <Route path="/topic" component={Topic}></Route>
     <Route path="/topic-detail" component={TopicDetail}></Route>
     <Route path="/user-detail" component={UserInfo}></Route>
-    <Route path="/book" component={Book}></Route>
   </Route>
 )

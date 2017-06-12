@@ -1,1 +1,9 @@
-export const CREATE_BOOK = 'CREATE_BOOK';
+export const topicAction = {
+  FETCH_TOPICS: 'FETCH_TOPICS',
+  FETCH_TOPICS_SUCCESS: 'FETCH_TOPICS_SUCCESS'
+}
+
+export const userAction ={
+  FETCH_USERS: 'FETCH_USERS',
+  FETCH_USERS_SUCCESS: 'FETCH_USERS_SUCCESS'
+}

@@ -4,7 +4,11 @@ import TopicItem from "components/TopicItem";
 class TopicList extends React.Component {
   render() {
     return (
-      <TopicItem/>
+      <div>
+        {this.props.topicList.map((topic, index) =>
+        <TopicItem key={index} topic={topic}/>
+          )}
+      </div>
     )
   }
 }

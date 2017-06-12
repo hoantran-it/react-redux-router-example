@@ -1,7 +1,9 @@
-// Set up your root reducer here...
 import {combineReducers} from "redux";
-import books from "./bookReducers";
+import book from "./bookReducers";
+import topic from "./topicReducers";
+
 
 export default combineReducers({
-  books
+  book,
+  topic
 });
