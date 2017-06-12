@@ -5,9 +5,7 @@ import TopicList from "components/TopicList";
 class TopicPage extends React.Component {
   render() {
     return (
-      <div>
-        <TopicList/>
-      </div>
+      <TopicList/>
     );
   }
 }

@@ -11,12 +11,12 @@ class LoginForm extends React.Component {
     let username = this.refs.username.getValue();
     let password = this.refs.password.getValue();
     this.props.login(username, password);
-    if (this.props.loggedIn) {
-      browserHistory.push('/');
-    }
   }
 
   render() {
+    if (this.props.loggedIn) {
+      browserHistory.push('/');
+    }
     return (
       <div>
         <TextField hintText="Username" ref="username"/>

@@ -1,7 +1,9 @@
 import React from "react";
+import {injectIntl} from 'react-intl';
 import FontIcon from "material-ui/FontIcon";
 import {BottomNavigation, BottomNavigationItem} from "material-ui/BottomNavigation";
 import IconLocationOn from "material-ui/svg-icons/communication/location-on";
+import messages from "messages";
 
 const recentsIcon = <FontIcon className="material-icons">restore</FontIcon>;
 const favoritesIcon = <FontIcon className="material-icons">favorite</FontIcon>;
@@ -15,10 +17,11 @@ class TopicFilter extends React.Component {
   select = (index) => this.setState({selectedIndex: index});
 
   render() {
+    const {formatMessage} = this.props.intl;
     return (
       <BottomNavigation selectedIndex={this.state.selectedIndex}>
         <BottomNavigationItem
-          label="Recents"
+          label={formatMessage(messages.filter.recents)}
           icon={recentsIcon}
           onTouchTap={() => this.select(0)}
         />
@@ -37,4 +40,4 @@ class TopicFilter extends React.Component {
   }
 }
 
-export default TopicFilter;
+export default injectIntl(TopicFilter);
