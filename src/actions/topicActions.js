@@ -1,6 +1,6 @@
 import axios from "axios";
-import {topicAction} from "./actionTypes";
-
+import {topicAction} from "actions/actionTypes";
+import localStorage from "LocalStorage";
 
 export const getTopicsSuccess = (topicList) => {
   return {
@@ -13,7 +13,7 @@ export const getTopicsSuccess = (topicList) => {
 export const getTopics = (filter) => {
 
   axios.defaults.baseURL = 'http://localhost:8088';
-  axios.defaults.headers.common['X-Auth-Token'] = "3e517098-d66c-4184-9f0b-96fa2297e72a";
+  axios.defaults.headers.common['X-Auth-Token'] = localStorage.getAuthToken();
 
   return (dispatch) => {
     return axios.get('/v1/topics')
@@ -38,7 +38,7 @@ export const getTopicDetailSuccess = (topic) => {
 export const getTopicDetail = (topicId) => {
 
   axios.defaults.baseURL = 'http://localhost:8088';
-  axios.defaults.headers.common['X-Auth-Token'] = "3e517098-d66c-4184-9f0b-96fa2297e72a";
+  axios.defaults.headers.common['X-Auth-Token'] = localStorage.getAuthToken();
 
   return (dispatch) => {
     return axios.get('/v1/topics/' + topicId)

@@ -5,7 +5,9 @@ export const topicAction = {
   GET_TOPIC_DETAIL_SUCCESS: 'GET_TOPIC_DETAIL_SUCCESS'
 }
 
-export const userAction ={
+export const userAction = {
+  LOG_IN: 'LOG_IN',
+  LOG_IN_SUCCESS: 'LOG_IN_SUCCESS',
   GET_USERS: 'GET_USERS',
   GET_USERS_SUCCESS: 'GET_USERS_SUCCESS'
 }

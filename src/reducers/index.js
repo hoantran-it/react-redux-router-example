@@ -1,9 +1,9 @@
 import {combineReducers} from "redux";
-import book from "./bookReducers";
+import  user from "./userReducers";
 import topic from "./topicReducers";
 
 
 export default combineReducers({
-  book,
+  user,
   topic
 });
