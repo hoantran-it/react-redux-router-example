@@ -1,12 +1,12 @@
 import axios from "axios";
-
 import {topicAction} from "./actionTypes";
 
 
 export const getTopicsSuccess = (topicList) => {
   return {
     type: topicAction.GET_TOPICS_SUCCESS,
-    topicList
+    topicList,
+    isLoading: false
   }
 };
 
@@ -30,7 +30,8 @@ export const getTopics = (filter) => {
 export const getTopicDetailSuccess = (topic) => {
   return {
     type: topicAction.GET_TOPIC_DETAIL_SUCCESS,
-    topic
+    topic,
+    isLoading: false
   }
 };
 

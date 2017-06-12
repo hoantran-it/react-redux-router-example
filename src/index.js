@@ -5,7 +5,6 @@ import registerServiceWorker from "registerServiceWorker";
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap/dist/css/bootstrap-theme.css";
 import "antd/dist/antd.css";
-
 import "style.css";
 import App from "App";
 

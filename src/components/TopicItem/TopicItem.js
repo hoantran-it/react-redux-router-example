@@ -1,7 +1,5 @@
 import React from "react";
-
 import {Card} from "material-ui/Card";
-
 import ContributorInfo from "components/ContributorInfo";
 import TopicInfo from "components/TopicInfo";
 import ReactionPanel from "components/ReactionPanel";
