@@ -15,7 +15,7 @@ class HomePage extends React.Component {
         </div>
         <div className="row">
           <div className="col-xs-6 col-sm-8 col-md-8">
-            <TopicList/>
+            {/*<TopicList/>*/}
           </div>
           <div className="col-xs-6 col-sm-4 col-md-4">
             <NewsFeed/>

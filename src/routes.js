@@ -16,7 +16,7 @@ export default (
     <Route path="/login" component={Login}></Route>
     <Route path="/create-topic" component={CreateTopic}></Route>
     <Route path="/topic" component={Topic}></Route>
-    <Route path="/topic-detail" component={TopicDetail}></Route>
+    <Route path="/topic-detail/:topicId?" component={TopicDetail}></Route>
     <Route path="/user-detail" component={UserInfo}></Route>
   </Route>
 )

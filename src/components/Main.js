@@ -15,7 +15,7 @@ const Main = (props) => {
               <li><Link to="/login">Login</Link></li>
               <li><Link to="/create-topic">Create Topic</Link></li>
               <li><Link to="/topic">Topic</Link></li>
-              <li><Link to="/topic-detail">Topic Detail</Link></li>
+              <li><Link to="/topic-detail/1">Topic Detail</Link></li>
               <li><Link to="/user-detail">User Info</Link></li>
             </ul>
           </div>
