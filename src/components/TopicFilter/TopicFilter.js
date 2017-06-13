@@ -21,17 +21,17 @@ class TopicFilter extends React.Component {
     return (
       <BottomNavigation selectedIndex={this.state.selectedIndex}>
         <BottomNavigationItem
-          label={formatMessage(messages.filter.recents)}
+          label={formatMessage(messages.topicFilter.recents)}
           icon={recentsIcon}
           onTouchTap={() => this.select(0)}
         />
         <BottomNavigationItem
-          label="Favorites"
+          label={formatMessage(messages.topicFilter.favorites)}
           icon={favoritesIcon}
           onTouchTap={() => this.select(1)}
         />
         <BottomNavigationItem
-          label="Nearby"
+          label={formatMessage(messages.topicFilter.hot)}
           icon={nearbyIcon}
           onTouchTap={() => this.select(2)}
         />

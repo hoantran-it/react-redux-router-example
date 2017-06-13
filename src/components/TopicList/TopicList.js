@@ -21,11 +21,11 @@ class TopicList extends React.Component {
       content = <CircularProgress />;
     } else {
       content = (
-        <di>
+        <div>
           {this.props.topicList.map((topic, index) =>
             <TopicItem key={index} topic={topic}/>
           )}
-        </di>
+        </div>
       )
     }
     return (
