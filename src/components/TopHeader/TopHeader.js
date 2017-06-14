@@ -1,14 +1,14 @@
 import React from "react";
 import AppBar from "material-ui/AppBar";
 import Avatar from "material-ui/Avatar";
-import Notification from "components/Notification";
+import NotificationSignal from "components/NotificationSignal";
 
 class TopHeader extends React.Component {
 
   render() {
     let children = (
       <div>
-        <Notification/>
+        <NotificationSignal/>
         <Avatar src="http://i.imgur.com/54sQ4lv.jpg"/>
       </div>
     );
