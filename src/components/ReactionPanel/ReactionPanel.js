@@ -1,5 +1,5 @@
 import React from "react";
-import {Icon} from "semantic-ui-react";
+import {Button, Icon} from "semantic-ui-react";
 
 
 class ReactionPanel extends React.Component {
@@ -11,11 +11,36 @@ class ReactionPanel extends React.Component {
   render() {
     return (
       <div>
-        <Icon circular link size="big" color="red" name="heartbeat" onTouchTap={e=>this._react("heartbeat")}/>
-        <Icon circular link size="big" color="blue" name="thumbs up" onTouchTap={e=>this._react("like")}/>
-        <Icon circular link size="big" color="green" name="als" onTouchTap={e=>this._react("als")}/>
-        <Icon circular link size="big" color="yellow" name="deaf" onTouchTap={e=>this._react("deaf")}/>
-        <Icon circular link size="big" color="violet" name="meh" onTouchTap={e=>this._react("meh")}/>
+        <Button
+          basic
+          color="red"
+          icon={<Icon size="big" color="red" name="heartbeat" onTouchTap={e=>this._react("heartbeat")}/>}
+          label={{ as: 'a', basic: true, color: 'red', content: '3' }}
+          labelPosition='right'/>
+        <Button
+          basic
+          color="blue"
+          icon={<Icon size="big" color="blue" name="thumbs up" onTouchTap={e=>this._react("like")}/>}
+          label={{ as: 'a', basic: true, color: 'blue', content: '5' }}
+          labelPosition='right'/>
+        <Button
+          basic
+          color="green"
+          icon={<Icon size="big" color="green" name="als" onTouchTap={e=>this._react("als")}/>}
+          label={{ as: 'a', basic: true, color: 'green', content: '7' }}
+          labelPosition='right'/>
+        <Button
+          basic
+          color="yellow"
+          icon={<Icon size="big" color="yellow" name="deaf" onTouchTap={e=>this._react("deaf")}/>}
+          label={{ as: 'a', basic: true, color: 'yellow', content: '2' }}
+          labelPosition='right'/>
+        <Button
+          basic
+          color="violet"
+          icon={<Icon size="big" color="violet" name="meh" onTouchTap={e=>this._react("meh")}/>}
+          label={{ as: 'a', basic: true, color: 'violet', content: '1' }}
+          labelPosition='right'/>
       </div>
     )
   }
