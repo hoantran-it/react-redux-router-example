@@ -1,5 +1,5 @@
 import React from "react";
-import {Button, Form, Header} from "semantic-ui-react";
+import {Header} from "semantic-ui-react";
 import CommentList from "components/CommentList";
 import ReplyPanel from "components/ReplyPanel";
 

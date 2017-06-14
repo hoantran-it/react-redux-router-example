@@ -1,15 +1,22 @@
 import React from "react";
-import {CardActions} from "material-ui/Card";
-import FlatButton from "material-ui/FlatButton";
+import {Icon} from "semantic-ui-react";
 
 
 class ReactionPanel extends React.Component {
+
+  _react(item) {
+    console.log(item);
+  }
+
   render() {
     return (
-      <CardActions>
-        <FlatButton label="Action1"/>
-        <FlatButton label="Action2"/>
-      </CardActions>
+      <div>
+        <Icon circular link size="big" color="red" name="heartbeat" onTouchTap={e=>this._react("heartbeat")}/>
+        <Icon circular link size="big" color="blue" name="thumbs up" onTouchTap={e=>this._react("like")}/>
+        <Icon circular link size="big" color="green" name="als" onTouchTap={e=>this._react("als")}/>
+        <Icon circular link size="big" color="yellow" name="deaf" onTouchTap={e=>this._react("deaf")}/>
+        <Icon circular link size="big" color="violet" name="meh" onTouchTap={e=>this._react("meh")}/>
+      </div>
     )
   }
 }

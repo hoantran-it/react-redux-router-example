@@ -1,11 +1,8 @@
 import React from "react";
 import {Link} from "react-router";
-import {Card} from "material-ui/Card";
 import Avatar from "material-ui/Avatar";
-import {Image, Item} from 'semantic-ui-react'
-import ContributorInfo from "components/ContributorInfo";
-import TopicInfo from "components/TopicInfo";
-import ReactionPanel from "components/ReactionPanel";
+import {Item} from 'semantic-ui-react'
+import TopicStatistics from "components/TopicStatistics";
 
 
 class TopicItem extends React.Component {
@@ -20,7 +17,7 @@ class TopicItem extends React.Component {
           <Item.Description>
             {description}
           </Item.Description>
-          <Item.Extra>Additional Details</Item.Extra>
+          <Item.Extra><TopicStatistics/></Item.Extra>
         </Item.Content>
       </Item>
     )

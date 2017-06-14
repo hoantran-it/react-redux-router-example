@@ -1,5 +1,5 @@
 import React from "react";
-import {Button, Form, Header} from "semantic-ui-react";
+import {Button, Form} from "semantic-ui-react";
 
 
 class ReplyPanel extends React.Component {
