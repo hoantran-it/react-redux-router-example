@@ -6,8 +6,10 @@
     "antd": "^2.10.4",
     "axios": "^0.16.2",
     "bootstrap": "^3.3.7",
+    "foundation-sites": "^6.3.1",
     "intl": "^1.2.5",
     "material-ui": "^0.18.2",
+    "node-sass-import": "^1.1.1",
     "react": "^15.5.4",
     "react-bootstrap": "^0.31.0",
     "react-dom": "^15.5.4",
@@ -25,7 +27,8 @@
     "extract-react-intl-messages": "^0.4.0",
     "node-sass-chokidar": "0.0.2",
     "npm-run-all": "^4.0.2",
-    "react-scripts": "1.0.7"
+    "react-scripts": "1.0.7",
+    "sass-npm-import": "0.0.1"
   },
   "scripts": {
     "build-css": "node-sass-chokidar --include-path ./sass --include-path ./node_modules sass/ -o src/",
