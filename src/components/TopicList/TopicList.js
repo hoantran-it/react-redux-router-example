@@ -1,5 +1,6 @@
 import React from "react";
 import {connect} from "react-redux";
+import {Item} from 'semantic-ui-react'
 import CircularProgress from "material-ui/CircularProgress";
 import TopicItem from "components/TopicItem";
 import * as topicActions from "actions/topicActions";
@@ -21,11 +22,11 @@ class TopicList extends React.Component {
       content = <CircularProgress />;
     } else {
       content = (
-        <div>
+        <Item.Group>
           {this.props.topicList.map((topic, index) =>
             <TopicItem key={index} topic={topic}/>
           )}
-        </div>
+        </Item.Group>
       )
     }
     return (
