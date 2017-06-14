@@ -8,11 +8,11 @@ class TopicStatistics extends React.Component {
         <table width="100%">
           <tr>
             <td>
-              <Icon size="large" color="black" name="unhide"/>25
+              <Icon circular size="large" color="black" name="unhide"/>25
               <br/>
-              <Icon size="large" color="black" name="comment outline"/>12
+              <Icon circular size="large" color="black" name="comment outline"/>12
               <br/>
-              <Icon size="large" color="black" name="user"/>5
+              <Icon circular size="large" color="black" name="user"/>5
             </td>
             <td>
               <Icon size="large" color="red" name="heartbeat"/>3

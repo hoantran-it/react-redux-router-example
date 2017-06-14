@@ -10,7 +10,7 @@ class ReactionPanel extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="c-reaction-panel">
         <Button
           basic
           color="red"
