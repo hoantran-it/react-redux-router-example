@@ -1,6 +1,6 @@
 import axios from "axios";
 import {topicAction} from "actions/actionTypes";
-import localStorage from "LocalStorage";
+import localStorage from "utils/LocalStorage";
 
 export const getTopicsSuccess = (topicList) => {
   return {
