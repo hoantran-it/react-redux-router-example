@@ -1,6 +1,7 @@
 import axios from "axios";
 import {userAction} from "actions/actionTypes";
 import localStorage from "utils/LocalStorage";
+import Constants from "utils/Constants";
 
 export const loginSuccess = (userInfo, loggedIn) => {
   return {
@@ -13,12 +14,12 @@ export const loginSuccess = (userInfo, loggedIn) => {
 
 export const login = (username, password) => {
 
-  axios.defaults.baseURL = 'http://localhost:8088';
-  axios.defaults.headers.common['X-Auth-Username'] = username;
-  axios.defaults.headers.common['X-Auth-Password'] = password;
+  axios.defaults.baseURL = Constants.URL_REST_BASE;
+  axios.defaults.headers.common[Constants.REST_HEADERS.USERNAME] = username;
+  axios.defaults.headers.common[Constants.REST_HEADERS.PASSWORD] = password;
 
   return (dispatch) => {
-    return axios.post('/v1/authentication/login')
+    return axios.post(Constants.REST_API.LOGIN)
       .then(response => {
         localStorage.setAuthToken(response.data.authToken)
         dispatch(loginSuccess({ userInfo: response.data.userInfo, loggedIn: true }))

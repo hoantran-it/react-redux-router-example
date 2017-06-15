@@ -12,7 +12,7 @@ class TopicItem extends React.Component {
       <Item>
         <Item.Image size='large' src={image}/>
         <Item.Content>
-          <Item.Header as='a'><Link to={"/topic-detail/"+id}>{title}</Link></Item.Header>
+          <Item.Header><Link to={"/topic-detail/"+id}>{title}</Link></Item.Header>
           <Item.Meta><Avatar size={20} src={contributor.avatar}/>{created}</Item.Meta>
           <Item.Description>
             {description}

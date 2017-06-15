@@ -1,6 +1,7 @@
-import axios from "axios";
 import {topicAction} from "actions/actionTypes";
-import localStorage from "utils/LocalStorage";
+import Constants from "utils/Constants";
+import {getApi} from "services/restService";
+
 
 export const getTopicsSuccess = (topicList) => {
   return {
@@ -11,20 +12,11 @@ export const getTopicsSuccess = (topicList) => {
 };
 
 export const getTopics = (filter) => {
-
-  axios.defaults.baseURL = 'http://localhost:8088';
-  axios.defaults.headers.common['X-Auth-Token'] = localStorage.getAuthToken();
-
   return (dispatch) => {
-    return axios.get('/v1/topics')
-      .then(response => {
-        dispatch(getTopicsSuccess({ topicList: response.data }))
-      })
-      .catch(error => {
-        throw(error);
-      });
+    getApi((response) => {
+      dispatch(getTopicsSuccess({topicList: response.data}))
+    }, Constants.REST_API.TOPICS, true);
   };
-
 };
 
 export const getTopicDetailSuccess = (topic) => {
@@ -36,18 +28,9 @@ export const getTopicDetailSuccess = (topic) => {
 };
 
 export const getTopicDetail = (topicId) => {
-
-  axios.defaults.baseURL = 'http://localhost:8088';
-  axios.defaults.headers.common['X-Auth-Token'] = localStorage.getAuthToken();
-
   return (dispatch) => {
-    return axios.get('/v1/topics/' + topicId)
-      .then(response => {
-        dispatch(getTopicDetailSuccess({ topic: response.data }))
-      })
-      .catch(error => {
-        throw(error);
-      });
+    getApi((response) => {
+      dispatch(getTopicDetailSuccess({topic: response.data}))
+    }, `${Constants.REST_API.TOPICS}/${topicId}`, true);
   };
-
 };

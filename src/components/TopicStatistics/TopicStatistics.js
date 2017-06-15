@@ -6,6 +6,7 @@ class TopicStatistics extends React.Component {
     return (
       <div>
         <table width="100%">
+          <tbody>
           <tr>
             <td>
               <Icon circular size="large" color="black" name="unhide"/>25
@@ -17,15 +18,16 @@ class TopicStatistics extends React.Component {
             <td>
               <Icon size="large" color="red" name="heartbeat"/>3
               <br/>
-              <Icon size="large" color="blue" name="thumbs up" />
+              <Icon size="large" color="blue" name="thumbs up"/>
               <br/>
-              <Icon size="large" color="green" name="als" />
+              <Icon size="large" color="green" name="als"/>
               <br/>
-              <Icon size="large" color="yellow" name="deaf" />
+              <Icon size="large" color="yellow" name="deaf"/>
               <br/>
-              <Icon size="large" color="violet" name="meh" />
+              <Icon size="large" color="violet" name="meh"/>
             </td>
           </tr>
+          </tbody>
         </table>
       </div>
     )

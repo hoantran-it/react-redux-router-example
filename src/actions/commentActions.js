@@ -1,6 +1,7 @@
-import axios from "axios";
 import {commentAction} from "actions/actionTypes";
-import localStorage from "utils/LocalStorage";
+import Constants from "utils/Constants";
+import {getApi} from "services/restService";
+
 
 export const getCommentsSuccess = (commentList) => {
   return {
@@ -11,42 +12,9 @@ export const getCommentsSuccess = (commentList) => {
 };
 
 export const getComments = (topicId) => {
-  axios.defaults.baseURL = 'http://localhost:8088';
-  axios.defaults.headers.common['X-Auth-Token'] = localStorage.getAuthToken();
-
   return (dispatch) => {
-    return axios.get('/v1/topics/' + topicId + '/comments')
-      .then(response => {
-        dispatch(getCommentsSuccess({ commentList: response.data }))
-      })
-      .catch(error => {
-        throw(error);
-      });
+    getApi((response) => {
+      dispatch(getCommentsSuccess({ commentList: response.data }))
+    }, `${Constants.REST_API.TOPICS}/${topicId}/comments`, true);
   };
-
-};
-
-export const getCommentDetailSuccess = (topic) => {
-  return {
-    type: commentAction.GET_COMMENT_DETAIL_SUCCESS,
-    topic,
-    isLoading: false
-  }
-};
-
-export const getCommentDetail = (topicId) => {
-
-  axios.defaults.baseURL = 'http://localhost:8088';
-  axios.defaults.headers.common['X-Auth-Token'] = localStorage.getAuthToken();
-
-  return (dispatch) => {
-    return axios.get('/v1/topics/' + topicId)
-      .then(response => {
-        dispatch(getCommentDetailSuccess({ topic: response.data }))
-      })
-      .catch(error => {
-        throw(error);
-      });
-  };
-
 };
