@@ -5,26 +5,26 @@ import Constants from "utils/Constants";
 import {postApi} from "services/restService";
 
 
-export const loginSuccess = (userInfo, loggedIn) => {
+export const authenticateSuccess = (userInfo, signedIn) => {
   return {
-    type: userAction.LOG_IN_SUCCESS,
+    type: userAction.AUTHENTICATE_SUCCESS,
     userInfo,
-    loggedIn,
+    signedIn,
     isLoading: false
   }
 };
 
-export const login = (username, password) => {
+export const signIn = (username, password) => {
 
   axios.defaults.baseURL = Constants.URL_REST_BASE;
   axios.defaults.headers.common[Constants.REST_HEADERS.USERNAME] = username;
   axios.defaults.headers.common[Constants.REST_HEADERS.PASSWORD] = password;
 
   return (dispatch) => {
-    return axios.post(Constants.REST_API.LOGIN)
+    return axios.post(Constants.REST_API.SIGN_IN)
       .then(response => {
         localStorage.setAuthToken(response.data.authToken);
-        dispatch(loginSuccess({ userInfo: response.data.userInfo, loggedIn: true }));
+        dispatch(authenticateSuccess({ userInfo: response.data.userInfo, signedIn: true }));
       })
       .catch(error => {
         throw(error);
@@ -37,7 +37,16 @@ export const signUp = (userData) => {
   return (dispatch) => {
     postApi((response) => {
       localStorage.setAuthToken(response.data.authToken);
-      dispatch(loginSuccess({ userInfo: response.data.userInfo, loggedIn: true }));
+      dispatch(authenticateSuccess({ userInfo: response.data.userInfo, signedIn: true }));
     }, Constants.REST_API.SIGN_UP, userData);
+  };
+};
+
+export const signOut = () => {
+  return (dispatch) => {
+    postApi((response) => {
+      localStorage.setAuthToken("");
+      dispatch(authenticateSuccess({ userInfo: "", signedIn: false }));
+    }, Constants.REST_API.SIGN_UP, {}, true);
   };
 };

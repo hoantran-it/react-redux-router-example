@@ -5,23 +5,23 @@ import TextField from "material-ui/TextField";
 import RaisedButton from "material-ui/RaisedButton";
 import * as userActions from "actions/userActions";
 
-class LoginForm extends React.Component {
+class SignInForm extends React.Component {
 
   _onSubmit() {
     let username = this.refs.username.getValue();
     let password = this.refs.password.getValue();
-    this.props.login(username, password);
+    this.props.signIn(username, password);
   }
 
   render() {
-    if (this.props.loggedIn) {
+    if (this.props.signedIn) {
       browserHistory.goBack();
     }
     return (
       <div>
         <TextField hintText="Username" ref="username"/>
         <TextField hintText="Password" ref="password"/>
-        <RaisedButton label="Login" onTouchTap={e => this._onSubmit()}/>
+        <RaisedButton label="Sign In" onTouchTap={() => this._onSubmit()}/>
       </div>
     )
   }
@@ -30,15 +30,15 @@ class LoginForm extends React.Component {
 const mapStateToProps = (state, ownProps) => {
   return {
     userInfo: state.user.userInfo,
-    loggedIn: state.user.loggedIn,
+    signedIn: state.user.signedIn,
     isLoading: state.user.isLoading
   }
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    login: (username, password) => dispatch(userActions.login(username, password))
+    signIn: (username, password) => dispatch(userActions.signIn(username, password))
   }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(LoginForm);
+export default connect(mapStateToProps, mapDispatchToProps)(SignInForm);

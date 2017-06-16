@@ -21,7 +21,7 @@ class SignUpForm extends React.Component {
   }
 
   render() {
-    if (this.props.loggedIn) {
+    if (this.props.signedIn) {
       browserHistory.goBack();
     }
     return (
@@ -47,7 +47,7 @@ class SignUpForm extends React.Component {
 const mapStateToProps = (state, ownProps) => {
   return {
     userInfo: state.user.userInfo,
-    loggedIn: state.user.loggedIn,
+    signedIn: state.user.signedIn,
     isLoading: state.user.isLoading
   }
 };

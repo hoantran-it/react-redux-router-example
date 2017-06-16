@@ -1,0 +1,6 @@
+{
+  "name": "SignInPage",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./SignInPage.js"
+}

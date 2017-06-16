@@ -8,8 +8,9 @@ export default {
     TOKEN: "X-Auth-Token"
   },
   REST_API: {
-    LOGIN: REST_VERSION + "/authentication/login",
-    SIGN_UP: REST_VERSION + "/authentication/signup",
+    SIGN_UP: REST_VERSION + "/authentication/sign-up",
+    SIGN_IN: REST_VERSION + "/authentication/sign-in",
+    SIGN_OUT: REST_VERSION + "/authentication/sign-out",
     USERS: REST_VERSION + "/users",
     TOPICS: REST_VERSION + "/topics",
     COMMENTS: REST_VERSION + "/comments"

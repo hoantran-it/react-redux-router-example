@@ -12,7 +12,7 @@ const Main = (props) => {
             <ul className="nav navbar-nav">
               <li><Link to="/">Home</Link></li>
               <li><Link to="/sign-up">Sign Up</Link></li>
-              <li><Link to="/login">Login</Link></li>
+              <li><Link to="/sign-in">Sign In</Link></li>
               <li><Link to="/create-topic">Create Topic</Link></li>
               <li><Link to="/topic">Topic</Link></li>
               <li><Link to="/topic-detail/1">Topic Detail</Link></li>

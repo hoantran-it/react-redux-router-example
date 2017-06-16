@@ -1,15 +1,18 @@
 import React from "react";
 import AppBar from "material-ui/AppBar";
-import Avatar from "material-ui/Avatar";
 import NotificationSignal from "components/NotificationSignal";
+import UserPanel from "components/UserPanel";
+import Language from "components/Language";
+
 
 class TopHeader extends React.Component {
 
   render() {
     let children = (
       <div>
+        <Language/>
         <NotificationSignal/>
-        <Avatar src="http://i.imgur.com/54sQ4lv.jpg"/>
+        <UserPanel/>
       </div>
     );
     return (
