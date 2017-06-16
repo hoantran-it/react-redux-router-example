@@ -2,6 +2,8 @@ import axios from "axios";
 import {userAction} from "actions/actionTypes";
 import localStorage from "utils/LocalStorage";
 import Constants from "utils/Constants";
+import {postApi} from "services/restService";
+
 
 export const loginSuccess = (userInfo, loggedIn) => {
   return {
@@ -21,12 +23,21 @@ export const login = (username, password) => {
   return (dispatch) => {
     return axios.post(Constants.REST_API.LOGIN)
       .then(response => {
-        localStorage.setAuthToken(response.data.authToken)
-        dispatch(loginSuccess({ userInfo: response.data.userInfo, loggedIn: true }))
+        localStorage.setAuthToken(response.data.authToken);
+        dispatch(loginSuccess({ userInfo: response.data.userInfo, loggedIn: true }));
       })
       .catch(error => {
         throw(error);
       });
   };
 
+};
+
+export const signUp = (userData) => {
+  return (dispatch) => {
+    postApi((response) => {
+      localStorage.setAuthToken(response.data.authToken);
+      dispatch(loginSuccess({ userInfo: response.data.userInfo, loggedIn: true }));
+    }, Constants.REST_API.SIGN_UP, userData);
+  };
 };

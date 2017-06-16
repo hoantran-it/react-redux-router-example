@@ -9,6 +9,7 @@ export default {
   },
   REST_API: {
     LOGIN: REST_VERSION + "/authentication/login",
+    SIGN_UP: REST_VERSION + "/authentication/signup",
     USERS: REST_VERSION + "/users",
     TOPICS: REST_VERSION + "/topics",
     COMMENTS: REST_VERSION + "/comments"

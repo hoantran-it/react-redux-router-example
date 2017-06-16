@@ -15,6 +15,8 @@ export const commentAction = {
 export const userAction = {
   LOG_IN: 'LOG_IN',
   LOG_IN_SUCCESS: 'LOG_IN_SUCCESS',
+  SIGN_UP: 'SIGN_UP',
+  SIGN_UP_SUCCESS: 'SIGN_UP_SUCCESS',
   GET_USERS: 'GET_USERS',
   GET_USERS_SUCCESS: 'GET_USERS_SUCCESS'
 }

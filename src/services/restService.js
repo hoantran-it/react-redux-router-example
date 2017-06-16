@@ -16,3 +16,18 @@ export const getApi = (cbFunc, restUrl, requiredToken = false) => {
       throw(error);
     });
 };
+
+export const postApi = (cbFunc, restUrl, data, requiredToken = false) => {
+  axios.defaults.baseURL = Constants.URL_REST_BASE;
+  if (requiredToken) {
+    axios.defaults.headers.common[Constants.REST_HEADERS.TOKEN] = localStorage.getAuthToken();
+  }
+
+  return axios.post(restUrl, data)
+    .then(response => {
+      cbFunc(response);
+    })
+    .catch(error => {
+      throw(error);
+    });
+};

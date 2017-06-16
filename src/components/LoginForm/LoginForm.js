@@ -15,13 +15,13 @@ class LoginForm extends React.Component {
 
   render() {
     if (this.props.loggedIn) {
-      browserHistory.push('/');
+      browserHistory.goBack();
     }
     return (
       <div>
         <TextField hintText="Username" ref="username"/>
         <TextField hintText="Password" ref="password"/>
-        <RaisedButton onTouchTap={e => this._onSubmit()} label="Login"/>
+        <RaisedButton label="Login" onTouchTap={e => this._onSubmit()}/>
       </div>
     )
   }
