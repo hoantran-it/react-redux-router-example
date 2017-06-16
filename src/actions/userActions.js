@@ -47,6 +47,6 @@ export const signOut = () => {
     postApi((response) => {
       localStorage.setAuthToken("");
       dispatch(authenticateSuccess({ userInfo: "", signedIn: false }));
-    }, Constants.REST_API.SIGN_UP, {}, true);
+    }, Constants.REST_API.SIGN_OUT, {}, true);
   };
 };

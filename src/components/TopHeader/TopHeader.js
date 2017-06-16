@@ -10,8 +10,8 @@ class TopHeader extends React.Component {
   render() {
     let children = (
       <div>
-        <Language/>
         <NotificationSignal/>
+        <Language/>
         <UserPanel/>
       </div>
     );

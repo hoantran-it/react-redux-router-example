@@ -38,7 +38,7 @@ class SignUpForm extends React.Component {
         <br/>
         <TextField hintText="Birthday" ref="birthday"/>
         <br/>
-        <RaisedButton label="Sign Up" onTouchTap={e => this._onSubmit()}/>
+        <RaisedButton label="Sign Up" onTouchTap={() => this._onSubmit()}/>
       </div>
     )
   }
