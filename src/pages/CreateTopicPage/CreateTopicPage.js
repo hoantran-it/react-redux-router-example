@@ -1,7 +1,7 @@
 import React from "react";
 import TopicForm from "components/TopicForm";
 import KeywordPanel from "components/KeywordPanel";
-import ContributorInfo from "components/ContributorInfo";
+import ContributorPanel from "components/ContributorPanel";
 
 class SignUpPage extends React.Component {
   render() {
@@ -9,7 +9,7 @@ class SignUpPage extends React.Component {
       <div>
         <TopicForm/>
         <KeywordPanel/>
-        <ContributorInfo/>
+        <ContributorPanel/>
       </div>
     );
   }

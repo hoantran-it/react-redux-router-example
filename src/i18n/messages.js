@@ -29,6 +29,21 @@ const topicFilter = defineMessages({
   }
 });
 
+const contributorPanel = defineMessages({
+  userTab: {
+    id: "contributor_panel_user_tab_label",
+    defaultMessage: "Current User",
+  },
+  guestTab: {
+    id: "contributor_panel_user_guest_label",
+    defaultMessage: "Guest",
+  },
+  hiddenLabel: {
+    id: "contributor_panel_hidden_label",
+    defaultMessage: "Hidden",
+  }
+});
+
 const reaction = defineMessages({
   feel: {
     id: "reaction_feel",
@@ -56,4 +71,4 @@ const reaction = defineMessages({
   }
 });
 
-export default {homePage, topicPage, topicFilter};
+export default {homePage, topicPage, topicFilter, contributorPanel, reaction};
