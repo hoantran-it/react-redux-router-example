@@ -14,13 +14,15 @@ class SignInForm extends React.Component {
   }
 
   render() {
-    if (this.props.signedIn) {
-      browserHistory.goBack();
-    }
+    // if (this.props.signedIn) {
+    //   browserHistory.goBack();
+    // }
     return (
       <div>
         <TextField hintText="Username" ref="username"/>
+        <br/>
         <TextField hintText="Password" ref="password"/>
+        <br/>
         <RaisedButton label="Sign In" onTouchTap={() => this._onSubmit()}/>
       </div>
     )
