@@ -1,18 +1,25 @@
 import React from "react";
-import TopicForm from "components/TopicForm";
-import KeywordPanel from "components/KeywordPanel";
-import ContributorPanel from "components/ContributorPanel";
+import {injectIntl} from "react-intl";
+import {connect} from "react-redux";
+import CreateTopicForm from "components/CreateTopicForm";
 
-class SignUpPage extends React.Component {
+
+class CreateTopicPage extends React.Component {
   render() {
     return (
       <div>
-        <TopicForm/>
-        <KeywordPanel/>
-        <ContributorPanel/>
+        <CreateTopicForm/>
       </div>
     );
   }
 }
 
-export default SignUpPage;
+const mapStateToProps = (state, ownProps) => {
+  return {}
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {}
+};
+
+export default injectIntl(connect(mapStateToProps, mapDispatchToProps)(CreateTopicPage));
