@@ -1,4 +1,4 @@
-import {browserHistory} from 'react-router';
+import {browserHistory} from "react-router";
 import {topicAction} from "actions/actionTypes";
 import Constants from "utils/Constants";
 import {getApi, postApi} from "services/restService";

@@ -1,4 +1,5 @@
 import axios from "axios";
+import {browserHistory} from "react-router";
 import {userAction} from "actions/actionTypes";
 import localStorage from "utils/LocalStorage";
 import Constants from "utils/Constants";
@@ -38,6 +39,7 @@ export const signUp = (userData) => {
     postApi((response) => {
       localStorage.setAuthToken(response.data.authToken);
       dispatch(authenticateSuccess({ userInfo: response.data.userInfo, signedIn: true }));
+      browserHistory.goBack();
     }, Constants.REST_API.SIGN_UP, userData);
   };
 };

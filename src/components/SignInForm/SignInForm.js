@@ -14,9 +14,6 @@ class SignInForm extends React.Component {
   }
 
   render() {
-    // if (this.props.signedIn) {
-    //   browserHistory.goBack();
-    // }
     return (
       <div>
         <TextField hintText="Username" ref="username"/>
