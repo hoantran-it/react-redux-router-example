@@ -1,6 +1,7 @@
+import {browserHistory} from 'react-router';
 import {topicAction} from "actions/actionTypes";
 import Constants from "utils/Constants";
-import {getApi} from "services/restService";
+import {getApi, postApi} from "services/restService";
 
 
 export const getTopicsSuccess = (topicList) => {
@@ -32,5 +33,22 @@ export const getTopicDetail = (topicId) => {
     getApi((response) => {
       dispatch(getTopicDetailSuccess({topic: response.data}))
     }, `${Constants.REST_API.TOPICS}/${topicId}`, true);
+  };
+};
+
+export const createTopicSuccess = (newTopic) => {
+  return {
+    type: topicAction.CREATE_TOPIC_SUCCESS,
+    newTopic,
+    isLoading: false
+  }
+};
+
+export const createTopic = (topic) => {
+  return (dispatch) => {
+    postApi((response) => {
+      dispatch(createTopicSuccess({newTopic: response.data}));
+      browserHistory.push(`/topic-detail/${response.data.id}`);
+    }, Constants.REST_API.TOPICS, topic, true);
   };
 };

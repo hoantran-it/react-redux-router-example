@@ -13,7 +13,7 @@ class TopicForm extends React.Component {
 
   _onChange(event, data) {
     this.objData[event.target.id] = data;
-    this.props.onChange(this.props.childId, this.objData);
+    this.props.onChange(this.props.id, this.objData);
   }
 
   render() {

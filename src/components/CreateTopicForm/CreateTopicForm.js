@@ -1,10 +1,13 @@
 import React from "react";
 import {injectIntl} from "react-intl";
 import {connect} from "react-redux";
+import {browserHistory} from "react-router";
 import RaisedButton from "material-ui/RaisedButton";
 import TopicForm from "components/TopicForm";
 import KeywordPanel from "components/KeywordPanel";
 import ContributorPanel from "components/ContributorPanel";
+import * as topicActions from "actions/topicActions";
+
 
 class CreateTopicForm extends React.Component {
 
@@ -13,29 +16,34 @@ class CreateTopicForm extends React.Component {
     this._onChange = this._onChange.bind(this);
   }
 
-  _onChange(childId, data) {
+  _onChange(id, data) {
     this.setState({
-      [childId]: data
+      [id]: data
     });
   }
 
   _onSubmit() {
-    console.log("create contributor");
-    console.log(this.state);
+    let objectData = this.state.topic;
+    objectData["contributor"] = {
+      "name": "testing",
+      "userId": this.props.userInfo.id,
+      "isHidden": false
+    };
+    this.props.createTopic(objectData);
   }
 
   render() {
     return (
       <div className="row">
         <div className="col-xs-6 col-sm-8 col-md-8">
-          <TopicForm childId="topic" onChange={this._onChange}/>
-          <KeywordPanel/>
+          <TopicForm id="topic" onChange={this._onChange}/>
+          <KeywordPanel id="keyword"/>
         </div>
         <div className="col-xs-6 col-sm-4 col-md-4">
           <RaisedButton label="Submit Topic" onTouchTap={() => this._onSubmit()}/>
           <br/>
           <br/>
-          <ContributorPanel/>
+          <ContributorPanel id="contributor"/>
         </div>
       </div>
     );
@@ -43,11 +51,16 @@ class CreateTopicForm extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  return {}
+  return {
+    userInfo: state.user.userInfo,
+    newTopic: state.topic.newTopic
+  }
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return {}
+  return {
+    createTopic: (topic) => dispatch(topicActions.createTopic(topic))
+  }
 };
 
 export default injectIntl(connect(mapStateToProps, mapDispatchToProps)(CreateTopicForm));
