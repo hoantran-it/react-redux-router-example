@@ -11,8 +11,8 @@ class TopicForm extends React.Component {
     this.objData = {};
   }
 
-  _onChange(event, data) {
-    this.objData[event.target.id] = data;
+  _onChange(id, value) {
+    this.objData[id] = value;
     this.props.onChange(this.props.id, this.objData);
   }
 
@@ -20,11 +20,17 @@ class TopicForm extends React.Component {
     const {formatMessage} = this.props.intl;
     return (
       <div>
-        <TextField id="title" hintText="Title" onChange={(event, newValue) => this._onChange(event, newValue)}/>
+        <TextField id="title"
+                   hintText="Title"
+                   onChange={(event, newValue) => this._onChange(event.target.id, newValue)}/>
         <br/>
-        <TextField id="description" hintText="Description" onChange={(event, newValue) => this._onChange(event, newValue)}/>
+        <TextField id="description"
+                   hintText="Description"
+                   onChange={(event, newValue) => this._onChange(event.target.id, newValue)}/>
         <br/>
-        <TextField id="image" hintText="Image" onChange={(event, newValue) => this._onChange(event, newValue)}/>
+        <TextField id="image"
+                   hintText="Image"
+                   onChange={(event, newValue) => this._onChange(event.target.id, newValue)}/>
       </div>
     )
   }

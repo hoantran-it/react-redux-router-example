@@ -24,11 +24,15 @@ class CreateTopicForm extends React.Component {
 
   _onSubmit() {
     let objectData = this.state.topic;
-    objectData["contributor"] = {
-      "name": "testing",
-      "userId": this.props.userInfo.id,
-      "isHidden": false
-    };
+    // If user dont change anything, by default we create topic and and owner info will be public
+    if(this.state.contributor) {
+      objectData["contributor"] = this.state.contributor;
+    } else {
+      objectData["contributor"] = {
+        userId: this.props.userInfo.id,
+        isHidden: false
+      };
+    }
     this.props.createTopic(objectData);
   }
 
@@ -43,7 +47,7 @@ class CreateTopicForm extends React.Component {
           <RaisedButton label="Submit Topic" onTouchTap={() => this._onSubmit()}/>
           <br/>
           <br/>
-          <ContributorPanel id="contributor"/>
+          <ContributorPanel id="contributor" onChange={this._onChange}/>
         </div>
       </div>
     );

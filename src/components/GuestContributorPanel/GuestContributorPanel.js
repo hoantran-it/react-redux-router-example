@@ -10,7 +10,9 @@ class GuestContributorPanel extends React.Component {
   render() {
     const {formatMessage} = this.props.intl;
     return (
-      <ContributorForm/>
+      <ContributorForm id={this.props.id}
+                       hasHiddenOpt={false}
+                       onChange={this.props.onChange}/>
     )
   }
 }

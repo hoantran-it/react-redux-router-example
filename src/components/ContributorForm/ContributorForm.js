@@ -13,45 +13,68 @@ class ContributorForm extends React.Component {
 
   constructor(props) {
     super(props);
-    this.state = {disabled: true};
+    // If contributor belongs to user, set user id for tracking
+    if(this.props.id == "user") {
+      this.objData = {
+        userId: 1
+      };
+    } else {
+      this.objData = {};
+    }
+    // Disabled by default for signed in user
+    // Enabled by default for guest can fill form
+    if (this.props.hasHiddenOpt) {
+      this.state = {disabled: true};
+    } else {
+      this.state = {disabled: false};
+    }
+
   }
 
-  _changeMode(data) {
-    this.setState({
-      disabled: !data.checked
-    })
-  }
-
-  _onSubmit() {
-    console.log("create contributor");
+  _onChange(id, data) {
+    if(id == "isHidden"){
+      this.setState({
+        disabled: !data
+      });
+    }
+    this.objData[id] = data;
+    this.props.onChange(this.props.id, this.objData);
   }
 
   render() {
     const {formatMessage} = this.props.intl;
+    let hiddenCheckbox = "";
+    if (this.props.hasHiddenOpt) {
+      hiddenCheckbox = (
+        <Checkbox id="isHidden"
+                  toggle
+                  label={formatMessage(messages.contributorPanel.hiddenLabel)}
+                  onChange={(event, data) => this._onChange(data.id, data.checked)}/>
+      );
+    }
     return (
       <div>
-        <Checkbox toggle
-                  label={formatMessage(messages.contributorPanel.hiddenLabel)}
-                  onChange={(event, data) => this._changeMode(data)}/>
+        {hiddenCheckbox}
+        <TextField id="name"
+                   disabled={this.state.disabled}
+                   hintText="Contributor Name"
+                   onChange={(event, value) => this._onChange(event.target.id, value)}/>
         <br/>
-        <TextField disabled={this.state.disabled} hintText="Contributor Name" ref="contributorName"/>
-        <br/>
-        <TextField disabled={this.state.disabled} hintText="Avatar" ref="avatar"/>
-        <br/>
-        <RaisedButton disabled={this.state.disabled} label="Complete" onTouchTap={() => this._onSubmit()}/>
+        <TextField id="avatar"
+                   disabled={this.state.disabled}
+                   hintText="Avatar"
+                   onChange={(event, value) => this._onChange(event.target.id, value)}/>
       </div>
     )
   }
 }
 
 const mapStateToProps = (state, ownProps) => {
-  return {
-  }
+  return {}
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return {
-  }
+  return {}
 };
 
 export default injectIntl(connect(mapStateToProps, mapDispatchToProps)(ContributorForm));

@@ -12,7 +12,9 @@ class UserContributorPanel extends React.Component {
   render() {
     let content = "";
     if (this.props.signedIn) {
-      content = <ContributorForm/>;
+      content = <ContributorForm id={this.props.id}
+                                 hasHiddenOpt={true}
+                                 onChange={this.props.onChange}/>
     } else {
       content = <SignInForm/>;
     }
