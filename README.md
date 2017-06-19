@@ -1,1 +1,1 @@
-# i-think-fe
+# React Redux Router example
